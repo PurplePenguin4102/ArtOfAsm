@@ -42,6 +42,7 @@ namespace Chapter1
 		}
 		return acc;
 	}
+
 	unsigned short toDate(unsigned int yr, unsigned int mo, unsigned int dd)
 	{
 		if (yr > 99 || mo > 12 || dd > 31)
@@ -49,9 +50,9 @@ namespace Chapter1
 			return 0;
 		}
 		unsigned short code = 0;
-		code += (mo << 12);
-		code += (dd << 7);
-		code += yr;
+		code |= (mo << 12);
+		code |= (dd << 7);
+		code |= yr;
 		return code;
 	}
 

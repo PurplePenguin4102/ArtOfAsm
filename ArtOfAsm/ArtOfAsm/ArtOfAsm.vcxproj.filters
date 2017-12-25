@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Chapter 1">
       <UniqueIdentifier>{c92f1991-7ffd-42e7-b46a-a3000ee388c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Chapter 2">
+      <UniqueIdentifier>{094e5a19-f3af-4597-aa2e-e79aae1bb81c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -30,6 +33,9 @@
     <ClInclude Include="Chapter1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -40,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="Chapter1.cpp">
       <Filter>Source Files\Chapter 1</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter2.cpp">
+      <Filter>Source Files\Chapter 2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

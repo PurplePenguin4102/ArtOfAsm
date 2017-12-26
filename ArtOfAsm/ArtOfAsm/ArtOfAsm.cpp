@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "Chapter1.h"
-
+#include "Chapter2.h"
 int main()
 {
 	// Chapter 1-1 test code
@@ -37,7 +37,20 @@ int main()
 		if (left == right)
 			break;
 	}
+
+	//---------------------------
+	//
+	// Chapter 2-1 test code
+	auto tbl = Chapter2::loadTable(1, 0, 1, 1);
+	auto trufa = Chapter2::evaluate(tbl, true, false);
+	//
+	// Chapter 2-2 test code
+	auto disp = Chapter2::displayTbl4Bit(tbl);
 	
+	//
+	// Chapter 2-3 test code
+	auto disp2 = Chapter2::displayTbl8Bit(tbl);
+
     return 0;
 }
 

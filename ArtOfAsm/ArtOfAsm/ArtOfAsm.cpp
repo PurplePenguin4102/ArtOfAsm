@@ -45,11 +45,13 @@ int main()
 	auto trufa = Chapter2::evaluate(tbl, true, false);
 	//
 	// Chapter 2-2 test code
-	auto disp = Chapter2::displayTbl4Bit(tbl);
+	char disp[180];
+	Chapter2::displayTbl4Bit(tbl, disp);
 	
 	//
 	// Chapter 2-3 test code
-	auto disp2 = Chapter2::displayTbl8Bit(tbl);
+	char disp2[180];
+	Chapter2::displayTbl8Bit(tbl, disp2);
 
     return 0;
 }

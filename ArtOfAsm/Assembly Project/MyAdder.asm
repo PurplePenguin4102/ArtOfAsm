@@ -1,27 +1,42 @@
 ; AddTwo.asm - adds two 32-bit integers.
 ; Chapter 3 example
 include \masm32\include\masm32rt.inc
-;.486
-;.model flat,stdcall
+
 .stack 4096
 ExitProcess proto,dwExitCode:dword
 .data
  
 data_buf db "What up nigggaaaaaa %d /g/",0
-crlf db 13,0
+debug db "eax %08x | ebx %08x | ecx %08x | edx %08x",13,10,0
+nNumberOfCharsWritten db 0
+crlf db 13,10,0
 .code
 main proc
+	printf(addr debug, eax, ebx, ecx, edx)
+	printf(addr debug, eax, ebx, ecx, edx)		
 	mov	eax, 5
+	push eax
+	printf(addr debug, eax, ebx, ecx, edx)
+	pop eax
 	add	eax, 6
-    ;INVOKE  GetStdHandle, STD_OUTPUT_HANDLE
-	;mov     edx, ENABLE_PROCESSED_OUTPUT or ENABLE_WRAP_AT_EOL_OUTPUT
-	;INVOKE  SetConsoleMode,eax,edx
-	;INVOKE  WriteConsole,ebx,lpBuffer,nChars,addr nNumberOfCharsWritten,ecx
-	printf("Sup biatch %d", eax)
+	printf(addr debug, eax, ebx, ecx, edx)
+	printf(addr debug, eax, ebx, ecx, edx)
+    printf(addr data_buf, eax)		
+;	INVOKE  GetStdHandle, STD_OUTPUT_HANDLE
+;	printf("eax %d | ebx %d | ecx %d | edx %d \r\n", eax, ebx, ecx, edx)
+;	mov     edx, ENABLE_PROCESSED_OUTPUT or ENABLE_WRAP_AT_EOL_OUTPUT
+;	printf("eax %d | ebx %d | ecx %d | edx %d \r\n", eax, ebx, ecx, edx)
+;	INVOKE  SetConsoleMode,eax,edx
+;	printf("eax %d | ebx %d | ecx %d | edx %d \r\n", eax, ebx, ecx, edx)
+;   xor ecx, ecx
+;	printf("eax %d | ebx %d | ecx %d | edx %d \r\n", eax, ebx, ecx, edx)
+;	INVOKE  WriteConsole,ebx, addr data_buf, 12,addr nNumberOfCharsWritten,ecx    
+;	printf("eax %d | ebx %d | ecx %d | edx %d \r\n", eax, ebx, ecx, edx)
 	
 	invoke ExitProcess,0
 main endp
 end main
+
 
 ;***********************************************************************************************
 
